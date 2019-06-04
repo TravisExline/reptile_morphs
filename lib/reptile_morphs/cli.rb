@@ -9,13 +9,10 @@ class ReptileMorphs::CLI
   end
 
   def list_morphs
-    #gets morphs
-    puts <<-DOC.gsub /^\s*/, ''
-    1. Leopard Geckos
-    2. Colubrids
-    3. Ball Pythons
-    DOC
     @species = ReptileMorphs::Species.species
+    @species.each.with_index(1) do |species, i|
+      puts "#{i}: #{species.name}"
+    end
   end
 
   def menu
