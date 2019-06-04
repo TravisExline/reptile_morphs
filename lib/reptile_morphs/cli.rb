@@ -11,7 +11,7 @@ class ReptileMorphs::CLI
   def list_morphs
     @species = ReptileMorphs::Species.species
     @species.each.with_index(1) do |species, i|
-      puts "#{i}: #{species.name}"
+      puts "#{i}: #{species.type}"
     end
   end
 
@@ -23,7 +23,7 @@ class ReptileMorphs::CLI
 
       if input.to_i > 0
         reptile_species = @species[input.to_i-1]
-        puts "#{reptile_species.name}"
+        puts "#{reptile_species.type}"
       elsif input == "reptiles"
         list_morphs
       else
