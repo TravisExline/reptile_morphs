@@ -19,18 +19,17 @@ class ReptileMorphs::CLI
   end
 
   def menu
-
     input = nil
     puts "Input which reptiles you would like more information on, or type exit to leave"
     while input != "exit"
       input = gets.strip
-      case input
-      when "Leopard Geckos"
-        puts "Which Leopard Gecko would you like more information on: Type reptiles to see the list of reptiles, or exit to leave."
-      when "Colubrids"
-        puts "Which Colubrids would you like more information on: Type reptiles to see the list of reptiles, or exit to leave."
-      when "Ball Pythons"
-        puts "Which Ball Python would you like more information on: Type reptiles to see the list of reptiles, or exit to leave."
+
+      if input.to_i > 0
+        puts @species[input.to_i-1]
+      elsif input == "reptiles"
+        list_morphs
+      else
+        puts "Confused? Type reptiles or exit."
       end
     end
   end
