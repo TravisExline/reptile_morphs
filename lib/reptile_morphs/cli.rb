@@ -1,5 +1,6 @@
 #CLI Controller
 class ReptileMorphs::CLI
+  puts "Hello world"
 
   def call
     puts "Take a Look at all the Different Reptiles for Sale!"
