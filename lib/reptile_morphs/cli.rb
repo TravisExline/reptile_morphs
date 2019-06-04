@@ -22,7 +22,8 @@ class ReptileMorphs::CLI
       input = gets.strip
 
       if input.to_i > 0
-        puts @species[input.to_i-1]
+        reptile_species = @species[input.to_i-1]
+        puts "#{reptile_species.name}"
       elsif input == "reptiles"
         list_morphs
       else
