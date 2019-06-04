@@ -24,6 +24,7 @@ class ReptileMorphs::CLI
       if input.to_i > 0
         reptile_species = @species[input.to_i-1]
         puts "#{reptile_species.type}"
+        puts "Type reptiles to return to the menu, or type exit."
       elsif input == "reptiles"
         list_morphs
       else
